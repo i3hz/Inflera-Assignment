@@ -1,0 +1,39 @@
+# company_faq.txt
+
+## General Questions
+
+**Q: What does Innovatech Solutions do?**
+A: Innovatech Solutions specializes in developing cutting-edge software for businesses, focusing on AI-driven analytics and cloud-based enterprise solutions. We help companies optimize their operations and make data-driven decisions.
+
+**Q: Where is Innovatech Solutions located?**
+A: Our headquarters are located at 123 Tech Park Drive, Silicon Valley, CA 94000. We also have regional offices in New York and London.
+
+**Q: How can I contact customer support?**
+A: You can reach our customer support team via email at support@innovatech.com or by calling our toll-free number 1-800-555-TECH (8324) during business hours (9 AM - 6 PM PST, Monday to Friday).
+
+## Product Information
+
+**Q: What are your main products?**
+A: Our flagship products include 'InsightAI', an advanced analytics platform, and 'CloudFlow', a comprehensive suite for managing cloud infrastructure and workflows. We also offer custom development services.
+
+**Q: Is there a free trial available for your products?**
+A: Yes, we offer a 14-day free trial for both InsightAI and CloudFlow. You can sign up for a trial on our website's product pages. No credit card is required for the trial period.
+
+**Q: What kind of training do you offer for your products?**
+A: We provide extensive documentation, video tutorials, and live webinar sessions. For enterprise clients, we also offer dedicated on-site or remote training programs tailored to their specific needs.
+
+## Careers
+
+**Q: Are you currently hiring?**
+A: We are always looking for talented individuals to join our team! Please visit our Careers page at innovatech.com/careers to see current openings and submit your application.
+
+**Q: What is the company culture like at Innovatech Solutions?**
+A: At Innovatech, we foster a collaborative, innovative, and inclusive environment. We encourage continuous learning and provide opportunities for professional growth. We believe in work-life balance and a strong team spirit.
+
+## Billing and Subscription
+
+**Q: How does your pricing work?**
+A: Our products are typically offered on a subscription basis, with different tiers available to suit various business sizes and needs. Detailed pricing information can be found on our website or by contacting our sales team at sales@innovatech.com.
+
+**Q: Can I cancel my subscription at any time?**
+A: Yes, you can cancel your monthly subscription at any time. For annual subscriptions, cancellations will take effect at the end of the current annual term. Please refer to our terms of service for more details.
