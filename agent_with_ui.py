@@ -21,7 +21,9 @@ from langchain_core.agents import AgentAction, AgentFinish
 
 # --- Configuration ---
 load_dotenv()
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+API_KEY = "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"
+
+OPENROUTER_API_KEY = API_KEY
 
 # Model for the RAG system's generator LLM
 RAG_LLM_MODEL_NAME = "deepseek/deepseek-r1-distill-llama-70b:free"
