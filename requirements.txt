@@ -1,0 +1,8 @@
+streamlit
+numpy
+faiss-cpu  # use faiss-gpu if you're using GPU
+sentence-transformers
+openai
+python-dotenv
+langchain
+langchain-openai
