@@ -5,9 +5,10 @@ import numpy as np
 import faiss
 from sentence_transformers import SentenceTransformer
 from openai import OpenAI
-
+import httpx
 # --- Configuration ---
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+OPENROUTER_API_KEY = "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"
+
 
 LLM_MODEL_NAME = "deepseek/deepseek-r1-distill-llama-70b:free"
 EMBEDDING_MODEL_NAME = 'all-MiniLM-L6-v2'
@@ -100,36 +101,38 @@ class DocumentStore:
 
 class LLMClient:
     def __init__(self, api_key, model_name=LLM_MODEL_NAME):
-        self.client = OpenAI(
-            base_url="https://openrouter.ai/api/v1",
-            api_key=api_key,
-        )
+        self.api_key = api_key
         self.model_name = model_name
+        self.base_url = "https://openrouter.ai/api/v1/chat/completions"
 
     def generate_answer(self, system_prompt, user_prompt_with_context):
-        print(f"\n--- Sending to LLM ({self.model_name}) ---")
-        # print(f"System Prompt: {system_prompt}") # Optional: print for debugging
-        # print(f"User Prompt with Context: {user_prompt_with_context}") # Optional: print for debugging
-        print("--------------------------------------")
         try:
-            completion = self.client.chat.completions.create(
-                model=self.model_name,
-                messages=[
+            headers = {
+                "Authorization": f"Bearer {self.api_key}",
+                "HTTP-Referer": "http://localhost",  # Optional
+                "X-Title": "InnovatechKnowledgeAssistant",  # Optional
+            }
+
+            payload = {
+                "model": self.model_name,
+                "messages": [
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt_with_context},
                 ],
-                temperature=0.2,  # Lower temperature for more factual, less creative answers
-                max_tokens=300
-            )
-            answer = completion.choices[0].message.content
-            print("--- LLM Response ---")
-            # print(answer) # Printed by the calling function
-            print("--------------------")
-            return answer
+                "temperature": 0.2,
+                "max_tokens": 300
+            }
+
+            response = httpx.post(self.base_url, headers=headers, json=payload)
+            response.raise_for_status()
+
+            data = response.json()
+
+            return data["choices"][0]["message"]["content"]
+
         except Exception as e:
             print(f"Error calling OpenRouter API: {e}")
             return "Sorry, I encountered an error trying to generate an answer."
-
 class KnowledgeAssistant:
     def __init__(self, documents, openrouter_api_key):
         self.document_store = DocumentStore(documents)
